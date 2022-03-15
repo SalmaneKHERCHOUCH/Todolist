@@ -11,9 +11,10 @@ function App() {
 
   return (
     <>
-    <Routes>
-  <Route exact path="/favoris" element={<Favoris />} />
-</Routes>
+      <Routes>
+        <Route path="*" element={<Accueil />} />
+        <Route exact path="/favoris" element={<Favoris />} />
+      </Routes>
     </>
 
   );
@@ -22,7 +23,4 @@ function App() {
 export default App;
 
 /*
-<Routes>
-<Route path="*" element={<Accueil />} />
-<Route exact path="/favoris" element={<Favoris />} />
-</Routes>*/
+*/

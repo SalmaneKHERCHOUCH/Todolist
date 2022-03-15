@@ -11,10 +11,13 @@ function Accueil() {
     return (
         <div>
             <header>
-                <p>
+                <h1>
                     Api GitHub
-                </p>
-
+                </h1>
+                <ul>
+                    <Link to="*">Accueil</Link>
+                    <Link to="/favoris">Favoris</Link>
+                </ul>
                 
             </header>
 
@@ -33,8 +36,3 @@ function Accueil() {
 }
 
 export default Accueil;
-/*
-<ul>
-                    <Link to="/accueil">Accueil</Link>
-                    <Link to="/favoris">Favoris</Link>
-                </ul>*/

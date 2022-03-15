@@ -1,18 +1,20 @@
 import React from 'react';
-
+import {
+    Link
+} from "react-router-dom";
 
 function Favoris() {
 
   return (
     <div>
       <header>
-        <p>
+        <h1>
           Api GitHub
-        </p>
+        </h1>
         <ul>
-          <li>Accueil</li>
-          <li>Favoris</li>
-        </ul>
+                   <li> <Link to="*">Accueil</Link> </li>
+                   <li> <Link to="/favoris">Favoris</Link> </li>
+                </ul>
       </header>
 
       <h1>Mes favoris</h1>
