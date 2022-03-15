@@ -1,27 +1,28 @@
-import { useState } from 'react';
 import './App.css';
-import './component/HelloWorld';
-import HelloWorld from './component/HelloWorld';
-
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+import Favoris from './pages/Favoris';
+import Accueil from './pages/Accueil';
 
 
 function App() {
-  const [hello, setHello] = useState(false);
-
-
 
   return (
-    <div className="App">
-      <header>
-        <p>
-          TodoList
-        </p>
-        <button onClick={() => setHello(true)}>Ajouter</button>        
-        <button>Supprimer</button>
-        {hello&&<HelloWorld />}
-      </header>
-    </div>
+    <>
+    <Routes>
+  <Route exact path="/favoris" element={<Favoris />} />
+</Routes>
+    </>
+
   );
 }
 
 export default App;
+
+/*
+<Routes>
+<Route path="*" element={<Accueil />} />
+<Route exact path="/favoris" element={<Favoris />} />
+</Routes>*/
