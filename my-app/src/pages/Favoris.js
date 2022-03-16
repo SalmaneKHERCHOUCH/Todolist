@@ -7,7 +7,6 @@ function Favoris() {
 
     function tableauFavoris() {
         let tab = [];
-        let index = 0;
 
         for (let key in localStorage) {
             tab.push(localStorage.getItem(key));
