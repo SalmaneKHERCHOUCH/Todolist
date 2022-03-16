@@ -1,14 +1,13 @@
-# Todolist
+# Api Git
 #
 # Objectif
 #
-# Afficher des elements
-# Supprimer des elements
-# Check les elements
-# Sauvegarder dans un localStorage
+# Afficher des elements via une api 
+# Supprimer et Enregistrer des elements dans le localStorage
+# Naviguez vers une page favoris
+# Afficher des elements dans Favoris
 # Design ergonomique
 # Gerer le responsive
-# Reorganiser les elements
-# Nommer sa todoList
-# Pourvoir editer plusieurs todo list
-# Espace Register/ Login
+# Mode Sombre
+# Ajout d'un package au choix
+
