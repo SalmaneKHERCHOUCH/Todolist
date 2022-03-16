@@ -1,26 +1,28 @@
-import React from 'react';
-import {
-    Link
-} from "react-router-dom";
+import Header from '../component/Header';
+
+
+
 
 function Favoris() {
 
-  return (
-    <div>
-      <header>
-        <h1>
-          Api GitHub
-        </h1>
-        <ul>
-                   <li> <Link to="*">Accueil</Link> </li>
-                   <li> <Link to="/favoris">Favoris</Link> </li>
-                </ul>
-      </header>
+function tableauFavoris() {
+        let tab = [];
 
-      <h1>Mes favoris</h1>
+        for(let key in localStorage) {
+        tab.push(localStorage.getItem(key))
+        console.log("On verifie les cles de notre tableau",localStorage.getItem(key))
+        }
+        return tab;
+    }
+    return (
+        <div>
+            <Header />
 
-    </div>
-  );
+            <h2>Mes favoris</h2>
+            {tableauFavoris()}
+
+        </div>
+    );
 }
 
 export default Favoris;
