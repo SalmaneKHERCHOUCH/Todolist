@@ -5,6 +5,7 @@ import { Table } from 'react-bootstrap';
 
 function Favoris() {
 
+    //On vas parcourir notre localStorage et le stocker dans un tableau, qu'on affichera dans un tableau
     function tableauFavoris() {
         let tab = [];
 
@@ -13,7 +14,6 @@ function Favoris() {
         }
         return tab;
     }
-    console.log("Tableau des favoris", tableauFavoris());
 
     return (
         <div>

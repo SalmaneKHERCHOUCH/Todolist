@@ -7,6 +7,7 @@ import Favoris from './pages/Favoris';
 import Accueil from './pages/Accueil';
 
 
+
 function App() {
 
   return (
@@ -22,5 +23,4 @@ function App() {
 
 export default App;
 
-/*
-*/
+

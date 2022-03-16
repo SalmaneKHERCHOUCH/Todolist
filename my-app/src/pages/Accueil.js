@@ -1,18 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Button, ListGroup } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from '../component/Header';
-
-
-//function numeroRandom(min,max) {
-//    return Math.trunc(Math.random()*(max-min) + min);
-//}
 
 function Accueil() {
 
     const [newgit, setNewgit] = useState({});
     const [input, setInput] = useState("");
     const [supprimer, setSupprimer] = useState("");
-
+    const notify = () => toast("L'element est bien supprimer");
 
 
     //On récupere les données utilisateurs git de notre api sous format JSON
@@ -22,22 +19,21 @@ function Accueil() {
         setNewgit(data);
     }
 
-    //On récupere les repos utilisateurs git de notre api sous format JSON
-    //const fetchRepos = async (username) => {
-    //    const response = await fetch(`https://api.github.com/users/${username}/repos`);
-    //    const data = await response.json();
-    //    setNewgit(data);    
-    //}
-
-    //console.log("On verifie le repos",fetchRepos('SalmaneKHERCHOUCH'))
-
     //On stock notre données dans le localStorage
     useEffect(() => {
         localStorage.setItem(newgit.id, newgit.login);
         localStorage.removeItem(undefined);
     }, [newgit]);
 
-
+    //On vérifie dans cette fonction que la donnée qu'on saisit représente une donnée dans notre localStorage, si oui une pop-up apparait sur le cote.
+    function supprimerElement(supprimer) {
+        if(localStorage.getItem(supprimer) !== null) {
+        console.log("On verifie la donnée",localStorage.getItem(supprimer));
+        localStorage.removeItem(supprimer);
+        notify();
+        }
+    }
+    
     return (
         <div>
             <Header />
@@ -63,11 +59,12 @@ function Accueil() {
                 <input type="text" onChange={(e) => setSupprimer(e.target.value)} placeholder="Id a supprimer" />
             </label>
             <br/>
-            <Button className='Milieu-bouton' variant="danger" onClick={() => localStorage.removeItem(supprimer)}>Supprimer</Button>
+            <Button className='Milieu-bouton' variant="danger" onClick={() => supprimerElement(supprimer)}>Supprimer</Button>
             <br />
 
+            <ToastContainer />
 
-
+            
 
         </div>
 
