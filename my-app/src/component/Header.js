@@ -7,13 +7,13 @@ function Header() {
 
     return (
         <div>
-            <header>
+            <header  className='App'>
                 <h1>
                     Api GitHub
                 </h1>
-                <ul>
-                    <li> <Link to="*">Accueil</Link> </li>
-                    <li> <Link to="/favoris">Favoris</Link> </li>
+                <ul className='Puce-delete'>
+                    <li className='Li'> <Link to="*">Accueil </Link> </li>
+                    <li className='Li'> <Link to="/favoris"> Favoris</Link> </li>
                 </ul>
 
             </header>

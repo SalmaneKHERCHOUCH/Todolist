@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, ListGroup } from 'react-bootstrap';
 import Header from '../component/Header';
 
 
@@ -19,9 +19,9 @@ function Accueil() {
     const fetchUser = async (username) => {
         const response = await fetch(`https://api.github.com/users/${username}`);
         const data = await response.json();
-        setNewgit(data);    
+        setNewgit(data);
     }
-    
+
     //On récupere les repos utilisateurs git de notre api sous format JSON
     //const fetchRepos = async (username) => {
     //    const response = await fetch(`https://api.github.com/users/${username}/repos`);
@@ -30,33 +30,40 @@ function Accueil() {
     //}
 
     //console.log("On verifie le repos",fetchRepos('SalmaneKHERCHOUCH'))
-    
+
     //On stock notre données dans le localStorage
     useEffect(() => {
         localStorage.setItem(newgit.id, newgit.login);
         localStorage.removeItem(undefined);
-    }, [newgit]);   
+    }, [newgit]);
 
 
     return (
         <div>
             <Header />
             <br />
-            <label>
-                Nom du GitHub : 
+            <label className='Milieu'>
+                Nom du GitHub :
                 <input type="text" onChange={(e) => setInput(e.target.value)} placeholder="Full name" />
-            </label><br/>
-            
-            <span>Id : {newgit.id}</span><br/>
-            <span>Login : {newgit.login}</span><br/>
-            <span>Url : {newgit.html_url}</span><br/>
-            <span>Compagnie : {newgit.company}</span><br/>
-            
-            <Button variant="success" onClick={async () => fetchUser(input)}>Favoris</Button><br/>
+            </label><br />
 
-            <span>Pour supprimer un favoris, rentrer l'id du git : </span>
-            <input type="text" onChange={(e) => setSupprimer(e.target.value)}  placeholder="Id a supprimer" />
-            <Button variant="danger" onClick={() => localStorage.removeItem(supprimer)}>Supprimer</Button>
+            <ListGroup>
+                <ListGroup.Item>Id : {newgit.id}</ListGroup.Item>
+                <ListGroup.Item>Login : {newgit.login}</ListGroup.Item>
+                <ListGroup.Item>Url : {newgit.html_url}</ListGroup.Item>
+                <ListGroup.Item>Compagnie : {newgit.company}</ListGroup.Item>
+            </ListGroup>
+
+            <br/>
+
+            <Button className='Milieu-bouton' variant="success" onClick={async () => fetchUser(input)}>Favoris</Button><br />
+
+            <label className='Milieu'>
+                Pour supprimer un favoris, rentrer l'id du git : 
+                <input type="text" onChange={(e) => setSupprimer(e.target.value)} placeholder="Id a supprimer" />
+            </label>
+            <br/>
+            <Button className='Milieu-bouton' variant="danger" onClick={() => localStorage.removeItem(supprimer)}>Supprimer</Button>
             <br />
 
 
@@ -69,3 +76,4 @@ function Accueil() {
 }
 
 export default Accueil;
+

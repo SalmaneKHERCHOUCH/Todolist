@@ -6,3 +6,23 @@
   color: #61dafb;
 }
 
+.Puce-delete {
+  list-style:none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0px !important;
+}
+
+.Li {
+  padding-right: 5px;
+}
+
+.Milieu {
+  display: flex;
+  justify-content: center;
+}
+
+.Milieu-bouton {
+  display: block !important;
+  margin : auto;
+}
