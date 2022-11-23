@@ -9,7 +9,7 @@ function Accueil() {
     const [newgit, setNewgit] = useState({});
     const [input, setInput] = useState("");
     const [supprimer, setSupprimer] = useState("");
-    const notify = () => toast("L'element est bien supprimer");
+    const notify = () => toast("L'element est bien supprimer des favoris");
 
 
     //On récupere les données utilisateurs git de notre api sous format JSON
