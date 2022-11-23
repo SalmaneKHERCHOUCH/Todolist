@@ -1,0 +1,7 @@
+FROM ubuntu:20.04
+
+WORKDIR .
+COPY package.json .
+RUN npm install --only=production
+
+ CMD ["/bin/sleep", "3600"]
