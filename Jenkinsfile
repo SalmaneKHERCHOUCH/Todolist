@@ -1,5 +1,10 @@
 pipeline{
     agent any
+
+    environment {
+        utilisateur = 'salmane'
+        couleur = 'noir'
+    }
         stages{
             stage('git checkout'){
                 steps{
@@ -7,14 +12,9 @@ pipeline{
                 }
             }
 
-            stage('Lister les variables'){
-                environment { 
-                    utilisateur = 'salmane'
-                    couleur = 'noir'
-                }
+            stage('Lister les variables'){               
                 steps{
-                   echo "Le nom de l'utilisateur est ${utilisateur}"
-                   echo "Ca couleur preferer est  ${couleur}"
+  
                 }
             }
             
