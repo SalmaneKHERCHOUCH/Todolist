@@ -14,7 +14,8 @@ pipeline{
 
             stage('Lister les variables'){               
                 steps{
-  
+                    echo "Le nom de l'utilisateur est ${utilisateur}"
+                    echo "Ca couleur preferer est  ${couleur}"
                 }
             }
             
