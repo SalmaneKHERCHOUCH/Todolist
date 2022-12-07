@@ -6,10 +6,22 @@ pipeline{
                    git branch: 'main', credentialsId: 'darkstone', url:'https://github.com/SalmaneKHERCHOUCH/Todolist'
                 }
             }
-            
-            stage('Build docker image') {
+
+            stage('Lister les variables'){
+                environment { 
+                    utilisateur = 'salmane'
+                    couleur = 'noir'
+                }
                 steps{
-                    bat 'docker build -t todolist/triang7:1.0.0 .'
+                   echo "Le nom de l'utilisateur est ${utilisateur}"
+                   echo "Ca couleur preferer est  ${couleur}"
+                }
+            }
+            
+            stage(' Utilisation des variables') {
+                steps{
+                    echo "Le nom de l'utilisateur est ${utilisateur}"
+                    echo "Ca couleur preferer est  ${couleur}"
                 }
                 
             }    
